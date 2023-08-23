@@ -17,7 +17,7 @@ public class CustomerServiceImpl implements CustomerService
     LocalDateTime current = LocalDateTime.now();
     @Override
     public CustomerProfile save(CustomerRegistrationDto registrationDto) {
-        CustomerProfile customer = new CustomerProfile(registrationDto.getCustomerFirstName(), registrationDto.getCustomerLastName(),
+        CustomerProfile customer = new CustomerProfile(registrationDto.getCustomerFirstName(),
                 registrationDto.getEmail(),"admin",current,"admin",
                 current);
 

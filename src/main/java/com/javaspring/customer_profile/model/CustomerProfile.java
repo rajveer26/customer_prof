@@ -10,19 +10,16 @@ public class CustomerProfile
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String customerFirstName;
-    private String customerLastName;
+    private String customerName;
     private String email;
     private String createdBy;
     private LocalDateTime creationDate;
     private String updatedBy;
     private LocalDateTime updationDate;
 
-    public CustomerProfile(String customerFirstName, String customerLastName, String email, String createdBy, LocalDateTime creationDate, String updatedBy, LocalDateTime updationDate) {
+    public CustomerProfile(String customerName, String email, String createdBy, LocalDateTime creationDate, String updatedBy, LocalDateTime updationDate) {
         super();
-        System.out.println("ok");
-        this.customerFirstName = customerFirstName;
-        this.customerLastName = customerLastName;
+        this.customerName = customerName;
         this.email = email;
         this.createdBy = createdBy;
         this.creationDate = creationDate;
@@ -35,12 +32,8 @@ public class CustomerProfile
         return id;
     }
 
-    public String getCustomerFirstName() {
-        return customerFirstName;
-    }
-
-    public String getCustomerLastName() {
-        return customerLastName;
+    public String getCustomerName() {
+        return customerName;
     }
 
     public String getEmail() {
@@ -67,12 +60,8 @@ public class CustomerProfile
         this.id = id;
     }
 
-    public void setCustomerFirstName(String customerFirstName) {
-        this.customerFirstName = customerFirstName;
-    }
-
-    public void setCustomerLastName(String customerLastName) {
-        this.customerLastName = customerLastName;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
     public void setEmail(String email) {

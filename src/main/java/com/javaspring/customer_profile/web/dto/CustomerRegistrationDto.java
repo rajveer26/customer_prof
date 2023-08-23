@@ -9,7 +9,9 @@ public class CustomerRegistrationDto {
     private String customerLastName;
     private String email;
 
-
+    public CustomerRegistrationDto() {
+        // Default constructor
+    }
     public CustomerRegistrationDto( String customerFirstName, String customerLastName, String email) {
         super();
         this.customerFirstName = customerFirstName;

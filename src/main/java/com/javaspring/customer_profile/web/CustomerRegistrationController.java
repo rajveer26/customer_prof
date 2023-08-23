@@ -1,29 +1,37 @@
 package com.javaspring.customer_profile.web;
 
+// CustomerRegistrationDto.java (as provided earlier)
+
+// CustomerRegistrationController.java
 import com.javaspring.customer_profile.service.CustomerService;
 import com.javaspring.customer_profile.web.dto.CustomerRegistrationDto;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-@RestController
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
+@ManagedBean
+@SessionScoped
+@Component
 public class CustomerRegistrationController {
-private CustomerService customerService;
 
-    public CustomerRegistrationController(CustomerService customerService) {
-        super();
-        this.customerService = customerService;
+    @Autowired
+    private CustomerService customerService;
+
+    private CustomerRegistrationDto customerRegistrationDto = new CustomerRegistrationDto();
+
+    public CustomerRegistrationDto getCustomerRegistrationDto() {
+        return customerRegistrationDto;
     }
 
-
-    public String demoo()
-    {
-        return "ok";
+    public void setCustomerRegistrationDto(CustomerRegistrationDto customerRegistrationDto) {
+        this.customerRegistrationDto = customerRegistrationDto;
     }
 
-    @PostMapping("/registration")
-    public String registerCustomerAccount(@RequestBody CustomerRegistrationDto customerRegistrationDto)
-    {
-      customerService.save(customerRegistrationDto);
-      return "success";
+    public String registerCustomer() {
+        customerService.save(customerRegistrationDto);
+        return "success";
     }
 }
+
