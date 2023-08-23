@@ -1,14 +1,9 @@
-package com.javaspring.customer_profile.model;
-import java.time.*;
+package com.javaspring.customer_profile.web.dto;
 
-import javax.persistence.*;
+import java.time.LocalDateTime;
 
-@Entity
-@Table(name ="customer", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
-public class CustomerProfile
-{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CustomerRegistrationDto {
+
     private Long id;
     private String customerFirstName;
     private String customerLastName;
@@ -18,9 +13,9 @@ public class CustomerProfile
     private String updatedBy;
     private LocalDateTime updationDate;
 
-    public CustomerProfile(String customerFirstName, String customerLastName, String email, String createdBy, LocalDateTime creationDate, String updatedBy, LocalDateTime updationDate) {
+    public CustomerRegistrationDto(Long id, String customerFirstName, String customerLastName, String email, String createdBy, LocalDateTime creationDate, String updatedBy, LocalDateTime updationDate) {
         super();
-        System.out.println("ok");
+        this.id = id;
         this.customerFirstName = customerFirstName;
         this.customerLastName = customerLastName;
         this.email = email;
@@ -28,7 +23,6 @@ public class CustomerProfile
         this.creationDate = creationDate;
         this.updatedBy = updatedBy;
         this.updationDate = updationDate;
-
     }
 
     public Long getId() {
