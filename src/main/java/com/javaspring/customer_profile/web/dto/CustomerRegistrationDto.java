@@ -8,21 +8,14 @@ public class CustomerRegistrationDto {
     private String customerFirstName;
     private String customerLastName;
     private String email;
-    private String createdBy;
-    private LocalDateTime creationDate;
-    private String updatedBy;
-    private LocalDateTime updationDate;
 
-    public CustomerRegistrationDto(Long id, String customerFirstName, String customerLastName, String email, String createdBy, LocalDateTime creationDate, String updatedBy, LocalDateTime updationDate) {
+
+    public CustomerRegistrationDto( String customerFirstName, String customerLastName, String email) {
         super();
-        this.id = id;
         this.customerFirstName = customerFirstName;
         this.customerLastName = customerLastName;
         this.email = email;
-        this.createdBy = createdBy;
-        this.creationDate = creationDate;
-        this.updatedBy = updatedBy;
-        this.updationDate = updationDate;
+
     }
 
     public Long getId() {
@@ -41,21 +34,7 @@ public class CustomerRegistrationDto {
         return email;
     }
 
-    public String getCreatedBy() {
-        return createdBy;
-    }
 
-    public LocalDateTime getCreationDate() {
-        return creationDate;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public LocalDateTime getUpdationDate() {
-        return updationDate;
-    }
 
     public void setId(Long id) {
         this.id = id;
@@ -73,19 +52,4 @@ public class CustomerRegistrationDto {
         this.email = email;
     }
 
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public void setCreationDate(LocalDateTime creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
-
-    public void setUpdationDate(LocalDateTime updationDate) {
-        this.updationDate = updationDate;
-    }
 }

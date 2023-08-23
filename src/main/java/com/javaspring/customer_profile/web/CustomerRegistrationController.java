@@ -21,7 +21,7 @@ private CustomerService customerService;
     }
 
     @PostMapping("/registration")
-    public String registerCustomerAccount(@ModelAttribute("customer")CustomerRegistrationDto customerRegistrationDto)
+    public String registerCustomerAccount(@RequestBody CustomerRegistrationDto customerRegistrationDto)
     {
       customerService.save(customerRegistrationDto);
       return "success";
