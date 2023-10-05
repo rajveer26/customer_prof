@@ -1,6 +1,6 @@
-package com.javaspring.customer_profile.repository;
+package com.erp.repository;
 
-import com.javaspring.customer_profile.model.CustomerProfile;
+import com.erp.model.CustomerProfile;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

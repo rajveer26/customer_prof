@@ -1,0 +1,14 @@
+# Use Tomcat 8.5 with Alpine Linux as the base image
+FROM tomcat:8.5.70-jdk8-openjdk
+
+# Set the current working directory inside the Docker image
+WORKDIR /usr/local/tomcat
+
+# Copy the WAR file from your target directory to the Docker image
+COPY target/*.war ./webapps/emr.war
+
+# Expose port 8080 for your application
+EXPOSE 8080
+
+# Define the command that should be executed when the Docker container starts
+CMD ["catalina.sh", "run"]

@@ -1,10 +1,10 @@
-package com.javaspring.customer_profile.model;
+package com.erp.model;
 import java.time.*;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name ="customer", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Table(name ="customer123", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class CustomerProfile
 {
     @Id
